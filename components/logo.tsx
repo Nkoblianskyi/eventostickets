@@ -22,9 +22,7 @@ export function Logo({ variant = 'header', className = '', href = '/', showWordm
 
   const content = (
     <>
-      <span className={`flex h-9 w-9 items-center justify-center rounded-sm ${iconBox}`}>
         <Image src="/favicon.ico" width={22} height={22} alt="" className="opacity-90" />
-      </span>
       {showWordmark && (
         <span className={`font-display text-xl font-bold uppercase tracking-tight sm:text-2xl ${wordClass}`}>
           eventos<span className="text-[#ff3d00]">tickets</span>
