@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* eventostickets — identidad: arena/corrida (crema, rojo, oro, carbón) */
+:root {
+  --et-void: #0a0a0c;
+  --et-asphalt: #141416;
+  --et-steel: #2a2a2f;
+  --et-cream: #e8e4dc;
+  --et-mist: #f2efe8;
+  --et-orange: #ff3d00;
+  /* antes: lima ácido. ahora: oro/arena */
+  --et-lime: #d6b24c;
+  --et-ink: #0a0a0c;
+  --et-muted: #8a8a8e;
+
+  --primary: var(--et-void);
+  --primary-foreground: var(--et-cream);
+  --accent: var(--et-orange);
+  --background: var(--et-mist);
+  --foreground: var(--et-ink);
+  --card: #ffffff;
+  --card-foreground: var(--et-ink);
+  --popover: #ffffff;
+  --popover-foreground: var(--et-ink);
+  --secondary: var(--et-steel);
+  --secondary-foreground: var(--et-cream);
+  --muted: #d4d0c8;
+  --muted-foreground: #5c5c62;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #fff;
+  --border: #c9c4bc;
+  --input: #c9c4bc;
+  --ring: var(--et-orange);
+  --radius: 0.25rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--et-ink);
+  --sidebar-primary: var(--et-void);
+  --sidebar-primary-foreground: var(--et-cream);
+  --sidebar-accent: var(--et-cream);
+  --sidebar-accent-foreground: var(--et-ink);
+  --sidebar-border: #c9c4bc;
+  --sidebar-ring: var(--et-orange);
+  --chart-1: var(--et-orange);
+  --chart-2: var(--et-lime);
+  --chart-3: #5c5c62;
+  --chart-4: #2a2a2f;
+  --chart-5: #8a8a8e;
+}
+
+.dark {
+  --background: var(--et-void);
+  --foreground: var(--et-cream);
+  --card: var(--et-asphalt);
+  --card-foreground: var(--et-cream);
+  --popover: var(--et-asphalt);
+  --popover-foreground: var(--et-cream);
+  --primary: var(--et-cream);
+  --primary-foreground: var(--et-void);
+  --secondary: var(--et-steel);
+  --secondary-foreground: var(--et-cream);
+  --muted: var(--et-steel);
+  --muted-foreground: #a0a0a5;
+  --border: var(--et-steel);
+  --input: var(--et-steel);
+  --ring: var(--et-lime);
+}
+
+@theme inline {
+  --font-sans: var(--font-dm), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-dm), Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--primary);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* utilidades de marca */
+.et-stripes {
+  background: repeating-linear-gradient(
+    -12deg,
+    transparent,
+    transparent 12px,
+    rgba(200, 255, 0, 0.06) 12px,
+    rgba(200, 255, 0, 0.06) 24px
+  );
+}
+
+.et-cut-br {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+}
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
