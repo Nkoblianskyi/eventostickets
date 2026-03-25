@@ -1,4 +1,4 @@
-import { CreditCardOff, GitCompareArrows, Globe2, Lock } from 'lucide-react'
+import { CreditCard, GitCompareArrows, Globe2, Lock } from 'lucide-react'
 
 const items = [
   {
@@ -9,7 +9,7 @@ const items = [
     accent: 'bg-[#c8ff00] text-[#0a0a0c]',
   },
   {
-    icon: CreditCardOff,
+    icon: CreditCard,
     title: 'Sin cobro aquí',
     body: 'No tramitamos pagos ni guardamos datos bancarios.',
     span: 'md:col-span-1',
